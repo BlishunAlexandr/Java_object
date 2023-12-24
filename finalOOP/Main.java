@@ -6,17 +6,18 @@ import finalOOP.calc.operation.Operation;
 
 public class Main {
     public static void main(String[] args) {
+        Number num1 = new Number(2, 3);
+        Number num2 = new Number(1, -1);
 
-        Number number1 = new Number(11, 2);
-        Number number2 = new Number(2, 2);
         OperationFactory factory = new OperationFactory();
 
-        Operation add = factory.createOperation('+');
-        Number sum1 = add.operate(number1, number2);
-        System.out.println("Addition result: " + sum1);
+        Operation addition = factory.createOperation('+');
+        addition.operate(num1, num2);
 
-        Operation mult = factory.createOperation('*');
-        Number sum2 = mult.operate(number1, number2);
-        System.out.println("Addition result: " + sum2);
+        Operation multiplication = factory.createOperation('*');
+        multiplication.operate(num1, num2);
+
+        Operation division = factory.createOperation('/');
+        division.operate(num1, num2);
     }
 }
